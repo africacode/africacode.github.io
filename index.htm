@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <title>GreySec</title>
+  <style>
+    .html {
+      background: #1b1b1b;
+      background-color: #1b1b1b;
+    }
+
+    body {
+      background-color: #1b1b1b;
+      font-family: Helvetica, Arial, Sans-Serif;
+      color: #eeeeee;
+    }
+
+    #banner h1 {
+      text-align: center;
+    }
+
+    #banner {
+      margin-top: 300px;
+    }
+
+    #intro {
+      font-size: 4em;
+      text-shadow: 0 1px 0 rgba(23, 23, 23, 0.4);
+    }
+
+    .p1 {
+      color: #6a6a6a;
+    }
+
+    .p2 {
+      color: #869db4;
+    }
+
+    .audio-container {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="banner">
+    <h1 id="intro"><span class="p1">Swahili</span><span class="p2">code</span> <i>is under maintenance</i></h1>
+    <!-- Display the countdown timer in an element -->
+
+    <h1 id="demo"></h1>
+  </div>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 7, 2020 12:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = "<span class='p2'>" + days + "</span>" + "<span class='p1'>" + "d " + "</span>" + "<span class='p2'>" + hours + "</span>" + "<span class='p1'>" + "h " +
+        "</span>" + "<span class='p2'>" + minutes + "</span>" + "<span class='p1'>" + "m " + "</span>" + "<span class='p2'>" + seconds + "</span>" + "<span class='p1'>" + "s " + "</span>";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "coming soon";
+      }
+    }, 1000);
+  </script>
+
+  <div class='audio-container'>
+    <audio controls autoplay loop>
+      <source src="https://files.catbox.moe/e8ht0l.mp3" type="audio/ogg">
+      <embed src="https://files.catbox.moe/e8ht0l.mp3" autostart="true" loop="true" hidden="true">
+    </audio>
+  </div>
+
+</body>
+
+</html>
